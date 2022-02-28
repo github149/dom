@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test">222
+        <div class="red">111</div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+    </div>
+    <div>333</div>
+    <script src="./dom.js"></script>
+    <script>
+        const div = dom.find('#test>.red')[0] // 获取对应的元素
+        console.log(div)
+        dom.style(div, 'color', 'red') // 设置 div.style.color
+        dom.style(div, {
+            fontSize: '25px'
+        })
+        console.log(dom.style(div, 'fontSize'))
+        const divList = dom.find('.red') // 获取多个 div.red 元素
+        dom.each(divList, (n) => console.log(n)) // 遍历 divList 里的所有元素
+    </script>
+
+</body>
+
+</html>
